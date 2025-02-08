@@ -1,0 +1,89 @@
+/* Basic styles for <a> and <ul> elements */
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+/* Banner styles */
+#banner {
+    display: flex;
+    align-items: center;
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+    margin: 0 15%; /* 15% margin on the left and right side */
+}
+
+#banner #logo {
+    height: 80px; /* Set the desired height */
+    margin-right: 20px; /* Space between the logo and text */
+}
+
+#banner #banner-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#banner h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#banner h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: normal;
+}
+
+/* Content layout styles */
+#content-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Two columns: auto for side menu, 1fr for content */
+    margin: 0 15%; /* 15% margin on the left and right side */
+    height: calc(100vh - 160px); /* Adjust height based on banner and footer height */
+}
+
+#side-menu {
+    border-right: 1px solid #ccc; /* Add vertical line */
+    padding-right: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f8f8;
+    
+}
+
+#content {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+#image-display {
+    max-width: 300px;
+}
+
+#image-display img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer styles */
+#footer {
+    text-align: center;
+    margin: 0 15%; /* 15% margin on the left and right side */
+    padding: 20px 0;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ccc;
+}
+
+#footer p {
+    margin: 0;
+    font-size: 16px;
+}
