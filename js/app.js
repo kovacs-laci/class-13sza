@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function (event) {
             event.preventDefault();
             const imgSrc = this.getAttribute('data-img');
-            toggleImage(imgSrc);
+            const imgAlt = this.textContent.trim();
+            toggleImage(imgSrc, imgAlt);
         });
     });
 });
 
-function toggleImage(imgSrc) {
+function toggleImage(imgSrc, imgAlt) {
     const imageDisplay = document.getElementById('image-display');
     const currentImg = imageDisplay.querySelector('img');
     
@@ -18,6 +19,6 @@ function toggleImage(imgSrc) {
         imageDisplay.innerHTML = '';
     } else {
         // Ellenkező esetben a megadott képet megjelenítjük
-        imageDisplay.innerHTML = `<img src="${imgSrc}" alt="Student Image">`;
+        imageDisplay.innerHTML = `<img src="${imgSrc}" alt="${imgAlt}" title="${imgAlt}">`;
     }
 }
