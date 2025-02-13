@@ -7,6 +7,28 @@ ul {
     list-style-type: none;
 }
 
+/* Ensure the page takes up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Flex container for the body content */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Ensure the main content wrapper takes up the available space */
+#content-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: space-between; /* Ensure space between side menu and content */
+    margin: 20px 15%; /* 15% margin on the left and right side */
+    align-items: stretch; /* Stretch to fill height */
+}
+
 /* Banner styles */
 #banner {
     display: flex;
@@ -40,28 +62,21 @@ ul {
     font-weight: normal;
 }
 
-/* Content layout styles */
-#content-wrapper {
-    display: grid;
-    grid-template-columns: auto 1fr; /* Two columns: auto for side menu, 1fr for content */
-    margin: 0 15%; /* 15% margin on the left and right side */
-    height: calc(100vh - 160px); /* Adjust height based on banner and footer height */
-}
-
+/* Side menu styles */
 #side-menu {
+    width: 200px;
     border-right: 1px solid #ccc; /* Add vertical line */
     padding-right: 20px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    background-color: #f8f8f8;
-    
 }
 
 #content {
+    flex: 1; /* Take up the remaining space */
+    margin-left: 20px;
     display: flex;
     align-items: flex-start;
-    padding-left: 20px;
 }
 
 #image-display {
@@ -74,10 +89,39 @@ ul {
     height: auto;
 }
 
+/* Thumbnails grid styles */
+.thumbnails-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns grid */
+    gap: 10px; /* Space between thumbnails */
+}
+
+.thumbnail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.thumbnail img {
+    max-width: 100px; /* Adjust the size as needed */
+    height: auto;
+    margin-bottom: 5px;
+    transition: transform 0.3s; /* Smooth transition for the zoom effect */
+}
+
+/* Zoom effect on hover */
+.thumbnail img:hover {
+    transform: scale(1.5); /* Zoom in on hover */
+}
+
+.thumbnail p {
+    margin: 0;
+    text-align: center;
+}
+
 /* Footer styles */
 #footer {
     text-align: center;
-    margin: 0 15%; /* 15% margin on the left and right side */
     padding: 20px 0;
     background-color: #f8f8f8;
     border-top: 1px solid #ccc;
