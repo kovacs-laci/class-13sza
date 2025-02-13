@@ -17,6 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
 function toggleImage(imgSrc) {
     const imageDisplay = document.getElementById('image-display');
     const currentImg = imageDisplay.querySelector('img');
+    const thumbnails = document.getElementById('thumbnails');
+    
+    // Hide the thumbnails when a student image is displayed
+    thumbnails.style.display = 'none';
     
     if (currentImg && currentImg.getAttribute('src') === imgSrc) {
         // If the image is already displayed and the source is the same, hide it
@@ -28,7 +32,12 @@ function toggleImage(imgSrc) {
 }
 
 function showAllStudents() {
+    const imageDisplay = document.getElementById('image-display');
     const thumbnails = document.getElementById('thumbnails');
+    
+    // Hide the student image when showing all thumbnails
+    imageDisplay.innerHTML = '';
+
     thumbnails.style.display = 'block';
     const studentLinks = document.querySelectorAll('.student-name');
     let thumbnailsHtml = '<div class="thumbnails-grid">';
